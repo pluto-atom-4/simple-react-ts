@@ -1,0 +1,354 @@
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.counter-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* Display Section */
+.counter-display-section {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.counter-value-box {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 200px;
+}
+
+.counter-label {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.875rem;
+  color: #7f8c8d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.counter-display {
+  margin: 0;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #3498db;
+  line-height: 1;
+}
+
+/* Main Action Buttons */
+.counter-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* History Action Buttons */
+.counter-history-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Button Styles */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-increment {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-decrement {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.btn-reset {
+  background: linear-gradient(135deg, #ffa400 0%, #ff6b6b 100%);
+  color: white;
+}
+
+.btn-undo {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  color: white;
+}
+
+.btn-redo {
+  background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+  color: white;
+}
+
+/* Input Section */
+.counter-input-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+}
+
+.input-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2c3e50;
+  white-space: nowrap;
+}
+
+.counter-input {
+  padding: 0.5rem 1rem;
+  border: 2px solid #3498db;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100px;
+  text-align: center;
+  transition: border-color 0.3s ease;
+}
+
+.counter-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* History Info Section */
+.counter-history-info {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.history-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.history-timeline {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+}
+
+.history-column {
+  flex: 1;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.history-column-label {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #7f8c8d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.history-item {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: #f0f4f8;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  border-left: 3px solid #3498db;
+}
+
+.history-item.redo {
+  border-left-color: #e74c3c;
+  opacity: 0.7;
+}
+
+.history-step {
+  font-weight: 600;
+  color: #7f8c8d;
+  min-width: 50px;
+}
+
+.history-value {
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.history-empty {
+  color: #95a5a6;
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+.history-current {
+  justify-content: center;
+}
+
+.history-current-value {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+}
+
+/* Learning Section */
+.learning-section {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.learning-section details {
+  cursor: pointer;
+}
+
+.learning-section summary {
+  font-weight: 600;
+  color: #2c3e50;
+  padding: 0.5rem;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.learning-section summary:hover {
+  color: #3498db;
+}
+
+.learning-content {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid #ecf0f1;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #34495e;
+}
+
+.learning-content h4 {
+  margin: 1rem 0 0.5rem 0;
+  color: #2c3e50;
+  font-size: 0.95rem;
+}
+
+.learning-content p {
+  margin: 0.5rem 0;
+}
+
+.learning-content ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.learning-content li {
+  margin: 0.25rem 0;
+}
+
+.learning-content code {
+  background: #f4f6f9;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #e74c3c;
+  font-size: 0.85rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .counter-container {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .counter-title {
+    font-size: 1.5rem;
+  }
+
+  .counter-display {
+    font-size: 2.5rem;
+  }
+
+  .counter-actions,
+  .counter-history-actions {
+    gap: 0.5rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .history-timeline {
+    flex-wrap: wrap;
+  }
+
+  .counter-input-section {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .input-label {
+    width: 100%;
+    text-align: center;
+  }
+
+  .counter-input {
+    width: 100%;
+  }
+}
