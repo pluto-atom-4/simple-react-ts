@@ -5,6 +5,7 @@ import SearchFilter from "./components/searchFilter";
 import AniListShowcase from "./components/aniListShowcase";
 import AniListErrorBoundary from './components/aniListShowcase/AniListErrorBoundary';
 import Spinner from './components/aniListShowcase/Spinner';
+import Todo from "./components/todo";
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
               <AniListShowcase />
             </Suspense>
           </AniListErrorBoundary>
+        </div>
+        <div className="components-grid">
+          <Todo />
         </div>
       </div>
     </div>
