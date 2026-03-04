@@ -1,8 +1,10 @@
-import React from 'react'
-import './App.css'
+import React, { Suspense } from 'react';
+import './App.css';
 import TextAppend from "./components/textAppend";
 import SearchFilter from "./components/searchFilter";
 import AniListShowcase from "./components/aniListShowcase";
+import AniListErrorBoundary from './components/aniListShowcase/AniListErrorBoundary';
+import Spinner from './components/aniListShowcase/Spinner';
 
 function App() {
   return (
@@ -22,7 +24,11 @@ function App() {
         <div className="components-grid">
           <TextAppend />
           <SearchFilter />
-          <AniListShowcase />
+          <AniListErrorBoundary>
+            <Suspense fallback={<Spinner />}>
+              <AniListShowcase />
+            </Suspense>
+          </AniListErrorBoundary>
         </div>
       </div>
     </div>

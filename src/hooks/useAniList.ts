@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 
 /**
  * TypeScript interfaces for AniList API response
@@ -105,4 +105,56 @@ function useAniList(): UseAniListReturn {
   };
 }
 
+/**
+ * Fetch anime listings from AniList GraphQL API (async resource for React 19 use())
+ */
+async function fetchAniListResource() {
+  const query = `
+    query {
+      Page(page: 1, perPage: 12) {
+        media(sort: POPULARITY_DESC, type: ANIME) {
+          id
+          title {
+            romaji
+            english
+          }
+          coverImage {
+            large
+          }
+          episodes
+          meanScore
+        }
+      }
+    }
+  `;
+
+  const response = await fetch('https://graphql.anilist.co', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ query }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP Error: ${response.status}`);
+  }
+
+  const result: AniListResponse = await response.json();
+  if ('errors' in result) {
+    throw new Error('Failed to fetch anime listings from AniList API');
+  }
+  return result.data.Page.media;
+}
+
+/**
+ * React 19 hook for fetching anime listings using the new use() API.
+ * Suspense and error boundaries are required in the consuming component.
+ * @returns AniListMedia[]
+ */
+function useAniList19(): AniListMedia[] {
+  return use(fetchAniListResource());
+}
+
+export { useAniList19 };
 export default useAniList;
