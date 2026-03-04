@@ -27,3 +27,5 @@ Thumbs.db
 # Misc
 *.local
 
+# Generated files (skill outputs)
+generated/by-claude/
