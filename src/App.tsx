@@ -7,6 +7,7 @@ import AniListErrorBoundary from './components/aniListShowcase/AniListErrorBound
 import Spinner from './components/aniListShowcase/Spinner';
 import Todo from "./components/todo";
 import CounterHistory from "./components/counterHistory";
+import MemoizedList from "./components/memoizedList";
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
         <div className="components-grid">
           <Todo />
           <CounterHistory />
+        </div>
+        <div className="components-grid">
+          <MemoizedList />
         </div>
       </div>
     </div>
