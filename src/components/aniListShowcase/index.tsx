@@ -1,37 +1,11 @@
 import React from 'react';
 import './index.css';
-import useAniList from '../../hooks/useAniList';
+import { useAniList19 } from '../../hooks/useAniList';
 
 const title = 'Anime Listings (AniList GraphQL)';
 
 function AniListShowcase() {
-  const { data, loading, error, retry } = useAniList();
-
-  if (loading) {
-    return (
-      <section className="layout-column anilist-showcase-container">
-        <p className="anilist-title">{title}</p>
-        <div className="anilist-loading">
-          <div className="spinner"></div>
-          <p>Loading anime listings...</p>
-        </div>
-      </section>
-    );
-  }
-
-  if (error) {
-    return (
-      <section className="layout-column anilist-showcase-container">
-        <p className="anilist-title">{title}</p>
-        <div className="anilist-error">
-          <p className="error-message">{error}</p>
-          <button className="retry-button" onClick={retry}>
-            Retry
-          </button>
-        </div>
-      </section>
-    );
-  }
+  const data = useAniList19();
 
   return (
     <section className="layout-column anilist-showcase-container">
@@ -69,4 +43,3 @@ function AniListShowcase() {
 }
 
 export default AniListShowcase;
-
