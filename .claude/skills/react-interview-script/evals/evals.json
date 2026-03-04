@@ -1,0 +1,23 @@
+{
+  "skill_name": "react-interview-script",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create an interview script for the AniListShowcase component. Analyze src/components/aniListShowcase/index.tsx, src/components/aniListShowcase/Spinner.tsx, src/hooks/useAniList.ts, and src/components/aniListShowcase/AniListErrorBoundary.tsx together. Write tech-note.md in src/components/aniListShowcase/",
+      "expected_output": "A tech-note.md file in src/components/aniListShowcase/ containing interview Q&A about: the use() hook for async anime data fetching (React 19 pattern), Suspense integration, Error Boundary implementation and error handling, useState for UI state, prop drilling through components, testing async components with mocked promises, edge cases like loading states and API failures, separation of concerns between components, and refactoring ideas. Written in conversational simple English.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I need an interview script for the SearchFilter component. Analyze src/components/searchFilter/index.tsx and src/hooks/useDebounce.ts. Generate tech-note.md in src/components/searchFilter/",
+      "expected_output": "A tech-note.md file in src/components/searchFilter/ covering: custom hook pattern (useDebounce), useState for search input and debounced value, useEffect for debouncing logic with dependency arrays, performance optimization through debouncing, handling controlled input components, testing debounce behavior with timing, edge cases like rapid user input and empty searches, refactoring opportunities, and explanation of why debouncing matters. Simple, conversational English.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Create tech notes for both TextAppend and TextField components as a pair. Generate separate tech-note.md files for src/components/textAppend/index.tsx and src/components/textField/index.tsx. Show how they work together.",
+      "expected_output": "Two tech-note.md files: one in src/components/textAppend/ and one in src/components/textField/. Cover: component composition and reusability, parent-child communication via props and callbacks, state management in parent vs child, uncontrolled input component pattern (or improvements to make it controlled), useState and useCallback in TextAppend, testing both components, the bug in concatenation logic (extra bracket), refactoring to reduce code duplication, and how these fundamental patterns appear in real React apps.",
+      "files": []
+    }
+  ]
+}
