@@ -8,6 +8,7 @@ import Spinner from './components/aniListShowcase/Spinner';
 import Todo from "./components/todo";
 import CounterHistory from "./components/counterHistory";
 import MemoizedList from "./components/memoizedList";
+import PrefixSearchInput from "./components/prefixSearchInput";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         </div>
         <div className="components-grid">
           <MemoizedList />
+          <PrefixSearchInput />
         </div>
       </div>
     </div>
